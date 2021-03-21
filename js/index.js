@@ -3,6 +3,7 @@
 const setDay = (number) => {
     let day = new Date();
     let days = 7 - day.getDay() + number - 1;
+    console.log(days);
     let nextDay = new Date(day.setDate(day.getDate() + days)); 
     console.log(nextDay.toString());
     return nextDay.toString();
@@ -38,9 +39,9 @@ const returnTheNextWeekSaturday = () => {
     let dd = today.getDay(); //6: Saturday
     let theday = '';
     //console.log(dd);
-    if (dd == 7) //7: Sunday
+    if (dd == 0) //0: Sunday
     {
-        theday = formatDate(6);
+        theday = formatDate(0);
     }
     else if(dd == 6) // 6: Saturday
     {
@@ -49,23 +50,23 @@ const returnTheNextWeekSaturday = () => {
     }
     else if (dd == 5){ //5: Friday
         //5: Friday
-        formatDate(1);
+        theday = formatDate(1);
     }
     else if (dd == 4){ //4: Thurs
         //5: Friday
-        formatDate(2);
+        theday = formatDate(2);
     }
     else if (dd == 3){ //3: Wed
         //5: Friday
-        formatDate(3);
+        theday = formatDate(3);
     }
     else if (dd == 2){ //2: Tue
         //5: Friday
-        formatDate(4);
+        theday = formatDate(4);
     }
     else if (dd == 1){ //1: Mon
         //5: Friday
-        formatDate(5);
+        theday = formatDate(5);
     }
     return theday;
 }
@@ -79,8 +80,8 @@ const returnTheSecondNextWeekSaturday = () => {
     //console.log(dd);
     let theday = '';
     switch (dd) {
-        case 7: //7: sunday
-            theday = formatDate(13);
+        case 0: //0: sunday
+            theday = formatDate(7);
             return theday;
         case 6: //6: saturday
             theday = formatDate(14);
