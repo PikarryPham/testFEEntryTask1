@@ -2,6 +2,7 @@
 //get the day of the next week
 const setDay = (number) => {
     let day = new Date();
+    console.log(day);
     let days = 7 - day.getDay() + number - 1;
     console.log(days);
     let nextDay = new Date(day.setDate(day.getDate() + days)); 
@@ -37,6 +38,7 @@ const formatDate = (number) => {
 const returnTheNextWeekSaturday = () => {
     let today = new Date();
     let dd = today.getDay(); //6: Saturday
+    console.log(dd);
     let theday = '';
     //console.log(dd);
     if (dd == 0) //0: Sunday
